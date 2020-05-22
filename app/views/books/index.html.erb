@@ -1,0 +1,17 @@
+<h1>This is books listing page</h1>
+
+<table>
+    <tr>
+        <th>Book Title</th>
+        <th>Description</th>
+        <th>Quantity</th>
+    </tr>
+
+    <% @books.each do |book| %>
+    <tr>
+        <td> <%= book.title %></td>
+        <td> <%= book.desc %></td>
+        <td> <%= book.quantity %> </td>
+    </tr>
+    <% end %>
+</table>

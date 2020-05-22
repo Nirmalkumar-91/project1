@@ -1,0 +1,32 @@
+<h1>This is a new book creation page</h1>
+
+<% if @book.errors.any? %>
+    <h2>These errors prevents to add a new book</h2>
+    <ul>
+    <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+
+<% end %>
+
+<%= form_with scope: :book, url: books_path, local: true do |f| %>
+    <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </p>
+
+    <p>
+        <%= f.label :desc %>
+        <%= f.text_area :desc %>
+    </p>
+
+    <p>
+        <%= f.label :quantity %>
+        <%= f.text_area :quantity %>
+   </p>
+
+   <p>
+        <%= f.submit %>
+   </p>
+<% end %>
